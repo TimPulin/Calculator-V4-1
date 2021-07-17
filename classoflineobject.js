@@ -6,6 +6,7 @@ class Element {
         this.name1 = ''
         this.name2 = ''
         this.name3 = ''
+        this.valueOfElement = 0
         this.value1 = 0
         this.value2 = 0
         this.value3 = 0
@@ -16,20 +17,20 @@ class Element {
     makeNameOfElement() {
         this.nameOfElement = this.name1
         if(this.checkAxels(this.name2.toLowerCase() ) ) {
-            this.nameOfElement += `+${this.name2}+SEQ`
-            return this.nameOfElement
+            this.nameOfElement += `+${this.name2}+SEQ`;
+            return;
         }
         for (let i = 2; i <= 3; i++) {
             if(this['name'+i] != '')  {
                 this.nameOfElement += ('+' + this['name'+i]);
             }
         }
-            return this.nameOfElement
     } // END makeNameOfElement()
 
     // ============== Вычисление стоимости элемента ========================
     calcValueOfElement() {
-        return this.calcBaseValue() * this.halfPartBonus + this.calcGoeBonus()
+        this.valueOfElement = this.calcBaseValue() * this.halfPartBonus + this.calcGoeBonus();
+        // return this.calcBaseValue() * this.halfPartBonus + this.calcGoeBonus()
     }
 
     calcBaseValue() {
@@ -55,12 +56,7 @@ class Element {
     } // END calcGoeBonus()
 
     checkAxels(secondjump) {
-        for (let i = 0; i < arrOfAxels.length; i++) {
-            if(arrOfAxels[i] === secondjump) {
-                return true;
-            }
-        }
-                return false;
+        return secondjump.charAt(1) === 'a' ?  true : false;
     }
     // ================== END Вычисление стоимости элемента ===================================
 } // END class Element{}
@@ -73,7 +69,7 @@ class ElementInModal extends Element {
     }
 
     CheckValidName() {
-        return list_value[this.linename.toLowerCase() ] == undefined ? false : true;
+        return listValue_Elements[this.linename.toLowerCase() ] == undefined ? false : true;
     }
 
     MakeLinesInfo() {
@@ -81,7 +77,7 @@ class ElementInModal extends Element {
     }
 
     SetLinesInfo() {
-        this[`value${this.currentLine_Index + 1}`] = list_value[ this.linename.toLowerCase() ];
+        this[`value${this.currentLine_Index + 1}`] = listValue_Elements[ this.linename.toLowerCase() ];
         this[`name${this.currentLine_Index + 1}`] = ProgramsElements.ElementInModal1.linename;
     }
 
