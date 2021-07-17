@@ -244,7 +244,7 @@ jQuery(document).ready(function() {
         }
 
         CheckValidName() {
-            return list_value[this.linename.toLowerCase() ] == undefined ? false : true;
+            return listValue_Elements[this.linename.toLowerCase() ] == undefined ? false : true;
         }
 
         MakeLinesInfo() {
@@ -252,7 +252,7 @@ jQuery(document).ready(function() {
         }
 
         SetLinesInfo() {
-            this[`value${this.currentLine_Index + 1}`] = list_value[ this.linename.toLowerCase() ];
+            this[`value${this.currentLine_Index + 1}`] = listValue_Elements[ this.linename.toLowerCase() ];
             this[`name${this.currentLine_Index + 1}`] = ProgramsElements.ElementInModal1.linename;
         }
 
