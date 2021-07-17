@@ -82,7 +82,7 @@ $(document).ready(function() {
         section = Iam.closest('.JS_Section-El')
         section.find('.lineoutput-name').text(ProgramsElements[keyOfElement].nameOfElement);
         section.find('.lineoutput-scores').text(ProgramsElements[keyOfElement].valueOfElement.toFixed(2) );
-        ProgramsElements[keyOfElement].goe === 0 ? buttonGoe.removeClass('active activeColor') : buttonGoe.addClass('active activeColor');
+        ProgramsElements[keyOfElement].goe == 0 ? buttonGoe.removeClass('active activeColor') : buttonGoe.addClass('active activeColor');
         buttonGoe.val(ProgramsElements[keyOfElement].goe);
     }
 
