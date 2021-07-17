@@ -90,7 +90,7 @@ $(document).ready(function () {
 $(document).ready(function() {
     let Iam;
 
-    $('.JS_Fly, .JS_ChangeLeg, .JS_V, .JS_Edge').click(function() {
+    $('.JS_Fly, .JS_ChangeLeg, .JS_V').click(function() {
         $(this).toggleClass('active activeColor');
 
     })
@@ -99,6 +99,14 @@ $(document).ready(function() {
         Iam = $(this);
         Iam.toggleClass('active activeColor');
         Iam.parent().find('.JS_Galka').not(Iam).each(function() {
+            jQuery(this).removeClass('active activeColor');
+        })
+    })
+
+    $('.JS_Edge').click(function() {
+        Iam = $(this);
+        Iam.toggleClass('active activeColor');
+        Iam.parent().find('.JS_Edge').not(Iam).each(function() {
             jQuery(this).removeClass('active activeColor');
         })
     })
