@@ -25,6 +25,7 @@ function GetID(here) {
 
 function MakeKeyOfElement() {
     keyOfElement = `Element${ID+1}`;
+    // console.log(keyOfElement)
 }
 
 const BUTTON_EU = $('#jumps .JS_ButtonModal[value="Eu"]'),
@@ -156,13 +157,15 @@ $(document).ready(function() {
 }) //==================КОНЕЦ сброс массивов всей таблицы============================
 
 function Reset_ElementObject(currentObject) {
-            currentObject.value1 = 0;
-            currentObject.value2 = 0;
-            currentObject.value3 = 0;
-            currentObject.name1 = '';
-            currentObject.name2 = '';
-            currentObject.name3 = '';
-            currentObject.goe = 0;
-            currentObject.halfPartBonus = 1;
+        currentObject.nameOfElement = '';
+        currentObject.name1 = '';
+        currentObject.name2 = '';
+        currentObject.name3 = '';
+        currentObject.valueOfElement = 0;
+        currentObject.value1 = 0;
+        currentObject.value2 = 0;
+        currentObject.value3 = 0;
+        currentObject.goe = 0;
+        currentObject.halfPartBonus = 1;
 }
 // END Director.js

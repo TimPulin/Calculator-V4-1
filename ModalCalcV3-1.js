@@ -122,7 +122,8 @@ $(document).ready(function() {
     //================КОНЕЦ все функции DirectorLine=====================
 
     function PrinterModal() {
-        $('#ElementModal .headeroutput-name').text(ProgramsElements.ElementInModal1.makeNameOfElement() );
+        ProgramsElements.ElementInModal1.makeNameOfElement();
+        $('#ElementModal .headeroutput-name').text(ProgramsElements.ElementInModal1.nameOfElement);
         $('#ElementModal .headeroutput-scores').text(ProgramsElements.ElementInModal1.calcBaseValue().toFixed(2) );
     }
 })
