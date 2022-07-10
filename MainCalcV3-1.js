@@ -52,8 +52,10 @@ $(document).ready(function() {
     //Работа с кнопкой Goe
     $('.JS_Section-Table .JS_Goe').click(function() {
         Iam = $(this);
+        buttonGoe = $(this);
     })
     $('#GoeModal .JS_ButtonModal').click(function() {
+        
         ProgramsElements[keyOfElement].goe = $(this).val();
         Iam.val(ProgramsElements[keyOfElement].goe)
         DirectorMain();
@@ -62,6 +64,7 @@ $(document).ready(function() {
     //Работа с кнопкой Х
     $('.JS_Section-Table .JS_X').click(function() {
         Iam = $(this);
+        buttonX = $(this);
         $(this).toggleClass('active activeColor');
         $(this).hasClass('active') ? ProgramsElements[keyOfElement].halfPartBonus = 1.1 : ProgramsElements[keyOfElement].halfPartBonus = 1;
         DirectorMain();
