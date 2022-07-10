@@ -72,12 +72,12 @@ h1, h2, h3 {font-family: serif;}
     color: #666;
 }
 
-/*для блока card в rules-fs.html*/
+/*для блока card*/
 .card h3, .card h4{
     font-size:14pt !important;
     font-family: sans-serif;
 }
-/*КОНЕЦ для блока card в rules-fs.html*/
+/*КОНЕЦ для блока card*/
 
 .line_throught {
     text-decoration: line-through;
@@ -113,6 +113,20 @@ a:hover {color:#ffcc00 !important;}
     border-radius: 5px;
 }
 
+/* .review {
+    background-color: #f3f4f8;
+    margin-left: -5px;
+    margin-right: -5px;
+
+}
+
+@media (min-width:576px) {
+    .review {
+        margin-left: -35px;
+        margin-right: -35px;
+    }
+} */
+
 .review .box_review {
     margin: 10px auto;
     max-width: 400px;
@@ -120,11 +134,18 @@ a:hover {color:#ffcc00 !important;}
     line-height: 1;
     border-radius: 5px;
 }
+
 .review .box_review a {
     margin:0 ;
     font-family: serif !important;
     font-size: 20px !important;
     color: black;
+}
+.review .box_review .text {
+    /* position: relative; */
+    /* top: 40%; */
+    /* left: 10%; */
+    transform: translate(0%, -110%);
 }
 .review .box_review a:hover{color: black !important;}
 .review .box_review .body {/*min-height: 100px;*/ padding: 5px; }
@@ -485,13 +506,14 @@ footer h5 {font-weight: 400; font-size: 16px;}
 }
 
 .item-page {
-    padding:5px 35px 35px 35px;
-    margin-top: 0px;
+    padding: 5px 10px 10px 10px;
 }
-@media (max-width:575px) {
+
+@media (min-width:576px) {
     .item-page {
-        padding: 5px 10px 10px 10px;
-     }
+        padding:5px 35px 35px 35px;
+        margin-top: 0px;
+    }
 }
 .item-page h2, .item-page h3 {
     text-align:center;
@@ -515,7 +537,7 @@ blockquote {
 /* КОНЕЦ стиль цитаты*/
 
 /*стили первого абзаца для краткого содержания*/
-.box_opening_paragraph {
+/* .box_opening_paragraph {
     min-height: 130px;
 }
 .box_review .box_opening_paragraph {min-height:0;}
@@ -525,7 +547,7 @@ blockquote {
     float:left;
     width: 200px;
 }
-.box_review .box_opening_paragraph img{display: none;}
+.box_review .box_opening_paragraph img{display: none;} */
 
 /*КОНЕЦ стили первого абзаца для краткого содержания*/
 
