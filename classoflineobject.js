@@ -16,32 +16,30 @@ class Element {
 
     makeNameOfElement() {
         this.nameOfElement = this.name1
-        if(this.checkAxels(this.name2.toLowerCase() ) ) {
-            this.nameOfElement += `+${this.name2}+SEQ`;
-            return;
-        }
         for (let i = 2; i <= 3; i++) {
             if(this['name'+i] != '')  {
                 this.nameOfElement += ('+' + this['name'+i]);
             }
+        }
+        if(this.checkAxels(this.name2.toLowerCase() ) || this.checkAxels(this.name3.toLowerCase() )  ) {
+            this.nameOfElement += '+SEQ';
         }
     } // END makeNameOfElement()
 
     // ============== Вычисление стоимости элемента ========================
     calcValueOfElement() {
         this.valueOfElement = this.calcBaseValue() * this.halfPartBonus + this.calcGoeBonus();
-        // return this.calcBaseValue() * this.halfPartBonus + this.calcGoeBonus()
     }
 
     calcBaseValue() {
-        if(this.checkAxels(this.name2.toLowerCase() ) ) {
-            return (this.value1 + this.value2) * 0.8;
-        }
+        // if(this.checkAxels(this.name2.toLowerCase() ) ) {
+        //     return (this.value1 + this.value2) * 0.8;
+        // }
             return this.value1 + this.value2 + this.value3;
     } // END calcBaseValue()
 
     calcGoeBonus(){
-        if(this.makeNameOfElement() == 'ChSq1') {
+        if(this.nameOfElement === 'ChSq1') {
             return 0.5*this.goe;
         }
         else {
